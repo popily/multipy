@@ -73,7 +73,7 @@ city,street -> augments to a full address string
 
 These are defined in the `processors` dictionary in `augment.augment_columns`. To add new processors, first define the processing function. 
 
-```
+```python
 def my_adding_processor(columns,data_types):
     # do something with columns
     # columns is a list of tuples: [(<str>header,<list>values),(<str>header,<list>values)...]
@@ -87,7 +87,7 @@ def my_adding_processor(columns,data_types):
 
 Then map your processor to a semantic type pattern. The toy function defined above assumes it is adding two columns of numbers, therefore it can only be used with a pair of columns that are each of the `numeric` semantic data type.
 
-```
+```python
 processors = {
     ...
     'numeric,numeric': {
